@@ -33,7 +33,7 @@ class Player{
        
     if(mouse.click){
 
-    ctx.lineWidth = 0.1;
+    ctx.lineWidth = 0.001;
     ctx.beginPath();
     ctx.moveTo(this.x, this.y);
     ctx.lineTo(mouse.x, mouse.y);
