@@ -5,7 +5,6 @@ canvas.width = 1900;
 canvas.height = 900;
 
 let score = 0;
-let gameFrame = 0;
 
 const playerImg = new Image();
 playerImg.src = './Images/Diver-removebg.png'
@@ -14,7 +13,6 @@ class Player{
     constructor(){
         this.x = canvas.width/2;
         this.y = canvas.height/2;
-        this.frame = 0;
     }
 
     update(){
