@@ -7,12 +7,14 @@ canvas.height = 900;
 let score = 0;
 let gameFrame = 0;
 
+const playerImg = new Image();
+playerImg.src = './Images/Diver-removebg.png'
 
 class Player{
     constructor(){
         this.x = canvas.width/2;
         this.y = canvas.height/2;
-        this.radius = 50;
+        this.frame = 0;
     }
 
     update(){
@@ -39,12 +41,12 @@ class Player{
     ctx.lineTo(mouse.x, mouse.y);
     ctx.stroke();
     }
-    ctx.fillStyle = 'black'  
+    ctx.fillStyle = "rgba(0, 0, 200, 0)"; 
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.rect(this.x, this.y, 65, 160);
     ctx.fill();
     ctx.closePath();
-    ctx.fillRect(this.x, this.y, this.radius, 10);
+    ctx.drawImage(playerImg, this.x - 170, this.y - 80)
  }
 }
 
