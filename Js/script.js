@@ -30,7 +30,8 @@ class Player{
 }
 
     draw(){
-       
+    
+        
     if(mouse.click){
 
     ctx.lineWidth = 0.001;
@@ -44,8 +45,23 @@ class Player{
     ctx.rect(this.x, this.y, 65, 160);
     ctx.fill();
     ctx.closePath();
+
     ctx.drawImage(playerImg, this.x - 170, this.y - 80)
  }
 }
 
 const player = new Player();
+
+const obstaclesArrayTrash = [];
+
+obstaclesId = setInterval(function () {
+    let obstacle = new ObstacleTrash(ctx, Math.random() * canvas.width, 0, 50, 50, Math.ceil(Math.random() * 3));
+    obstaclesArrayTrash.push(obstacle);
+}, 2000);
+
+const obstaclesArrayBeer = [];
+
+obstaclesId = setInterval(function () {
+    let obstacle = new ObstacleBeer(ctx, Math.random() * canvas.width, 0, 50, 50, Math.ceil(Math.random() * 5));
+    obstaclesArrayBeer.push(obstacle);
+}, 15000);

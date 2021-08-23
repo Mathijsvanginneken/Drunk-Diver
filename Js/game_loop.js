@@ -5,6 +5,14 @@ function letsPlay(){
     player.update();
     background.draw();
     player.draw();
+    obstaclesArrayTrash.forEach((eachObstacle) => {
+        eachObstacle.draw();
+        eachObstacle.move();
+    }),
+    obstaclesArrayBeer.forEach((eachObstacle) => {
+        eachObstacle.draw();
+        eachObstacle.move();
+    }),
     requestAnimationFrame(letsPlay);
 }
 
