@@ -58,3 +58,25 @@ class ObstacleBeer {
 		this.y += this.speed;
 	}
 }
+
+const sharkImg = document.createElement('img');
+sharkImg.src = './Images/Shark.png';
+
+class ObstacleShark {
+	constructor(canvasContext, positionX, positionY, width, height, speed) {
+	    this.ctx = canvasContext,
+		this.x = positionX,
+		this.y = positionY,
+		this.width = width,
+		this.height = height,
+        this.speed = speed
+	}
+
+	draw() {
+        this.ctx.drawImage(sharkImg, this.x, this.y, this.width, this.height);
+	}
+
+	move() {
+		this.x += this.speed;
+	}
+}

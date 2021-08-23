@@ -13,6 +13,10 @@ function letsPlay(){
         eachObstacle.draw();
         eachObstacle.move();
     }),
+    obstaclesArrayShark.forEach((eachObstacle) => {
+        eachObstacle.draw();
+        eachObstacle.move();
+    }),
     requestAnimationFrame(letsPlay);
 }
 

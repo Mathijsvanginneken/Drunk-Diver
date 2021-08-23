@@ -55,13 +55,20 @@ const player = new Player();
 const obstaclesArrayTrash = [];
 
 obstaclesId = setInterval(function () {
-    let obstacle = new ObstacleTrash(ctx, Math.random() * canvas.width, 0, 50, 50, Math.ceil(Math.random() * 3));
+    let obstacle = new ObstacleTrash(ctx, Math.random() * canvas.width + 10, 0, 50, 50, Math.ceil(Math.random() * 3));
     obstaclesArrayTrash.push(obstacle);
 }, 2000);
 
 const obstaclesArrayBeer = [];
 
 obstaclesId = setInterval(function () {
-    let obstacle = new ObstacleBeer(ctx, Math.random() * canvas.width, 0, 50, 50, Math.ceil(Math.random() * 5));
+    let obstacle = new ObstacleBeer(ctx, Math.random() * canvas.width + 10, 0, 50, 50, Math.ceil(Math.random() * 5));
     obstaclesArrayBeer.push(obstacle);
 }, 15000);
+
+const obstaclesArrayShark = [];
+
+obstaclesId = setInterval(function () {
+    let obstacle = new ObstacleShark(ctx, 0, Math.random() * canvas.height + 10, 250, 100, Math.ceil(Math.random() * 5));
+    obstaclesArrayShark.push(obstacle);
+}, 2000);
