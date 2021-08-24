@@ -10,16 +10,16 @@ function letsPlay(){
         eachObstacle.move();
         
     }),
-    obstaclesArrayBeer.forEach((eachObstacle) => {
+    /*obstaclesArrayBeer.forEach((eachObstacle) => {
         eachObstacle.draw();
         eachObstacle.move();
     }),
     obstaclesArrayShark.forEach((eachObstacle) => {
         eachObstacle.draw();
         eachObstacle.move();
-    }),
-    collision();
-    
+    }),*/
+    collisions();
+    console.log('Hey collision happening')
     
     requestAnimationFrame(letsPlay);
 }

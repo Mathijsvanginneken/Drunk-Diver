@@ -1,13 +1,13 @@
-function collision() {
-    for (const trash of obstaclesArrayTrash) {
+/*function collision() {
+    for (let i = obstaclesArrayTrash.length - 1; i >= 0; i--) {
       if (
-        player.x < trash.x + trash.width && 
-        player.x +  player.width > trash.x &&
-        player.y < trash.y + trash.height &&
-        player.y +  player.height > trash.y
+        player.x < obstaclesArrayTrash.x + obstaclesArrayTrash.width && 
+        player.x +  player.width > obstaclesArrayTrash.x &&
+        player.y < obstaclesArrayTrash.y + obstaclesArrayTrash.height &&
+        player.y +  player.height > obstaclesArrayTrash.y
       )
-        scorePoints += 1;
-       obstaclesArrayTrash.splice(trash, 1);
+        obstaclesArrayTrash.splice(obstaclesArrayTrash, 1);
+        console.log('this is the obstacle array trash', i)
   }
    for (const beer of obstaclesArrayBeer) {
      if (
@@ -26,7 +26,6 @@ function collision() {
        player.y < shark.y + shark.height &&
        player.y +  player.height > shark.y
      )
-       scorePoints += 1;
-        //obstaclesArrayTrash.splice(i, 1);
+     scorePoints += 1;
     }
-}
+}*/

@@ -1,4 +1,4 @@
-const trashImg1 = document.createElement('img');
+/*const trashImg1 = document.createElement('img');
 trashImg1.src = './Images/blue-boot.png';
 const trashImg3 = document.createElement('img');
 trashImg3.src = './Images/brown-boot.png';
@@ -79,4 +79,4 @@ class ObstacleShark {
 	move() {
 		this.x += this.speed;
 	}
-}
+}*/

@@ -7,7 +7,7 @@ canvas.height = 900;
 let score = 0;
 
 const playerImg = new Image();
-playerImg.src = './Images/Diver-removebg.png'
+playerImg.src = './Images/Diver-removebg-preview.png'
 
 class Player{
     constructor(){
@@ -40,7 +40,7 @@ class Player{
     ctx.lineTo(mouse.x, mouse.y);
     ctx.stroke();
     }
-    ctx.fillStyle = "rgba(0, 0, 200, 0)"; 
+    ctx.fillStyle = "rgba(200, 0, 200, 0)"; 
     ctx.beginPath();
     ctx.rect(this.x, this.y, 65, 160);
     ctx.fill();
@@ -51,9 +51,14 @@ class Player{
 }
 
 const player = new Player();
-let scorePoints = 0;
+
+/*let scorePoints = [];
+
 console.log(scorePoints)
+
+
 const obstaclesArrayTrash = [];
+
 let collectedTrash = [];
 
 obstaclesId = setInterval(function () {
@@ -73,4 +78,4 @@ const obstaclesArrayShark = [];
 obstaclesId = setInterval(function () {
     let obstacle = new ObstacleShark(ctx, 0, Math.random() * canvas.height + 10, 250, 100, Math.ceil(Math.random() * 5));
     obstaclesArrayShark.push(obstacle);
-}, 2000);
+}, 2000);*/
