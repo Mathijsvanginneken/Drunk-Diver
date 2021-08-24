@@ -51,8 +51,10 @@ class Player{
 }
 
 const player = new Player();
-
+let scorePoints = 0;
+console.log(scorePoints)
 const obstaclesArrayTrash = [];
+let collectedTrash = [];
 
 obstaclesId = setInterval(function () {
     let obstacle = new ObstacleTrash(ctx, Math.random() * canvas.width + 10, 0, 50, 50, Math.ceil(Math.random() * 3));

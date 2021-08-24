@@ -8,6 +8,7 @@ function letsPlay(){
     obstaclesArrayTrash.forEach((eachObstacle) => {
         eachObstacle.draw();
         eachObstacle.move();
+        
     }),
     obstaclesArrayBeer.forEach((eachObstacle) => {
         eachObstacle.draw();
@@ -17,6 +18,9 @@ function letsPlay(){
         eachObstacle.draw();
         eachObstacle.move();
     }),
+    collision();
+    
+    
     requestAnimationFrame(letsPlay);
 }
 
