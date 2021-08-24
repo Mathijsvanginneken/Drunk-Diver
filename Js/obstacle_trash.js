@@ -51,7 +51,6 @@ let trashTypes = [trashImg1, trashImg2, trashImg3, trashImg4, trashImg5, trashIm
 let trashTypesDrunkLevelOne = [trashImg9, trashImg10, trashImg11, trashImg12, trashImg13, trashImg14, trashImg15, trashImg16]    
 let trashTypesDrunkLevelTwo = [trashImg17, trashImg18, trashImg19, trashImg20, trashImg21, trashImg22, trashImg23, trashImg24]    
 
-let beerScore = 0;
 
 if (beerScore === 0){
 type = trashTypes[Math.floor(Math.random() * trashTypes.length)];
@@ -83,28 +82,5 @@ class ObstacleTrash {
 	move() {
 		this.y += this.speed;
 	}
-}
-
-obstaclesId = setInterval(function () {
-    let obstacle = new ObstacleTrash(ctx, Math.random() * canvas.width + 10, 0, 150, 120, Math.ceil(Math.random() * 3));
-    obstaclesArrayTrash.push(obstacle);
-}, 2000);
-
-
-const obstaclesArrayTrash = [];
-
-function collisions() {
-    
-    for (let i = obstaclesArrayTrash.length - 1; i >= 0; i--) {
-    
-      if (
-        obstaclesArrayTrash[i].x >= player.x &&
-        obstaclesArrayTrash[i].x <= player.x + player.width &&
-        obstaclesArrayTrash[i].y >= player.y &&
-        obstaclesArrayTrash[i].y <= player.y + player.height
-      ) {
-        obstaclesArrayTrash.splice(i, 1);
-      } console.log(i)
-    }
 }
 

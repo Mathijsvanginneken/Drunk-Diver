@@ -1,81 +1,37 @@
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-
-canvas.width = 1900;
-canvas.height = 900;
-
-let score = 0;
-
-const playerImg = new Image();
-playerImg.src = './Images/Diver-removebg-preview.png'
-
-class Player{
-    constructor(){
-        this.x = canvas.width/2;
-        this.y = canvas.height/2;
-    }
-
-    update(){
-    const distanceOfX = this.x - mouse.x;
-
-    console.log(canvas.width, mouse.x)
-
-    const distanceOfY = this.y - mouse.y;
-    if (mouse.x != this.x){
-            this.x -= distanceOfX/30;
-    }
-    if (mouse.y != this.y){
-            this.y -= distanceOfY/30;
-    }
-}
-
-    draw(){
-    
-        
-    if(mouse.click){
-
-    ctx.lineWidth = 0.001;
-    ctx.beginPath();
-    ctx.moveTo(this.x, this.y);
-    ctx.lineTo(mouse.x, mouse.y);
-    ctx.stroke();
-    }
-    ctx.fillStyle = "rgba(200, 0, 200, 0)"; 
-    ctx.beginPath();
-    ctx.rect(this.x, this.y, 65, 160);
-    ctx.fill();
-    ctx.closePath();
-
-    ctx.drawImage(playerImg, this.x - 170, this.y - 80)
- }
-}
-
-const player = new Player();
-
-/*let scorePoints = [];
-
-console.log(scorePoints)
-
 
 const obstaclesArrayTrash = [];
+const player = new Player();
+const background = new Background(ctx);
 
-let collectedTrash = [];
+function letsPlay(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    player.update();
+    background.draw();
+    player.draw();
+    obstaclesArrayTrash.forEach((eachObstacle) => {
+        eachObstacle.draw();
+        eachObstacle.move();
+        
+    }),
+    collisions();
+    console.log('Hey collision happening')
+    
+    requestAnimationFrame(letsPlay);
+}
 
-obstaclesId = setInterval(function () {
-    let obstacle = new ObstacleTrash(ctx, Math.random() * canvas.width + 10, 0, 50, 50, Math.ceil(Math.random() * 3));
-    obstaclesArrayTrash.push(obstacle);
-}, 2000);
+letsPlay();
 
-const obstaclesArrayBeer = [];
-
-obstaclesId = setInterval(function () {
-    let obstacle = new ObstacleBeer(ctx, Math.random() * canvas.width + 10, 0, 50, 50, Math.ceil(Math.random() * 5));
-    obstaclesArrayBeer.push(obstacle);
-}, 15000);
-
-const obstaclesArrayShark = [];
-
-obstaclesId = setInterval(function () {
-    let obstacle = new ObstacleShark(ctx, 0, Math.random() * canvas.height + 10, 250, 100, Math.ceil(Math.random() * 5));
-    obstaclesArrayShark.push(obstacle);
-}, 2000);*/
+function collisions() {
+    
+    for (let i = obstaclesArrayTrash.length - 1; i >= 0; i--) {
+    
+      if (
+        obstaclesArrayTrash[i].x >= player.x &&
+        obstaclesArrayTrash[i].x <= player.x + player.width &&
+        obstaclesArrayTrash[i].y >= player.y &&
+        obstaclesArrayTrash[i].y <= player.y + player.height
+      ) {
+        obstaclesArrayTrash.splice(i, 1);
+      } console.log(i)
+    }
+}
