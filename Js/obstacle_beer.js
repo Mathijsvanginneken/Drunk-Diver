@@ -1,7 +1,7 @@
 const beerImg = document.createElement('img');
 beerImg.src = './Images/gold_tankard.png';
 
-let beerScore = 0;
+let beerScore = 20;
 
 class ObstacleBeer {
 	constructor(canvasContext, positionX, positionY, width, height, speed) {

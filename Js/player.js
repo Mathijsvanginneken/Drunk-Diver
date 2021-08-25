@@ -1,35 +1,25 @@
 const playerImg1 = new Image();
-playerImg1.src = './Images/Diver-removebg-preview.png'
+playerImg1.src = './Images/player1.png'
 const playerImg2 = new Image();
-playerImg2.src = './Images/drunk-diver1.png'
+playerImg2.src = './Images/player2.png'
 const playerImg3 = new Image();
-playerImg3.src = './Images/drunk-diver2.png'
+playerImg3.src = './Images/player3.png'
   
-
-if (beerScore === 0){
-    playerImg = playerImg1;
-}
-
-if (beerScore === 1){
-    playerImg = playerImg2;
-}
-
-if (beerScore === 3){
-    playerImg = playerImg3;
-}
-
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = 1900;
-canvas.height = 900;
+canvas.height = 800;
+canvas.width = 1800;
+
+let playerHeight = 170;
+let playerWidth = 80;
 
 class Player{
     constructor(){
-        this.x = canvas.width/2;
-        this.y = canvas.height/2;
-        this.width = 65;
-        this.height = 160;
+        this.x = canvas.width;
+        this.y = canvas.height;
+        this.width = 80;
+        this.height = 170;
     }
 
     update(){
@@ -53,13 +43,19 @@ class Player{
     ctx.lineTo(mouse.x, mouse.y);
     ctx.stroke();
     }
-    ctx.fillStyle = "rgba(200, 0, 200, 0)"; 
+    ctx.fillStyle = "rgba(0, 0, 200, 0)";  
     ctx.beginPath();
     ctx.rect(this.x, this.y, 65, 160);
     ctx.fill();
     ctx.closePath();
 
-    ctx.drawImage(playerImg, this.x - this.height, this.y - this.width)
+    if (beerScore <= 40){
+        ctx.drawImage(playerImg1, this.x - this.height, this.y - this.width);
+        } else if (beerScore <= 70){
+        ctx.drawImage(playerImg2, this.x - this.height, this.y - this.width);
+        } else if (beerScore <= 100){
+        ctx.drawImage(playerImg3, this.x - this.height, this.y - this.width);
+        }
  }
 }
 

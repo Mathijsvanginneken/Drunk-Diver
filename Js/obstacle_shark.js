@@ -5,18 +5,6 @@ sharkImg2.src = './Images/drunk-shark1.png';
 const sharkImg3 = document.createElement('img');
 sharkImg3.src = './Images/drunk-shark2.png';
 
-if (beerScore === 0){
-    sharkImg = sharkImg1;
-}
-
-if (beerScore === 2){
-    sharkImg = sharkImg2;
-}
-
-if (beerScore === 4){
-    sharkImg = sharkImg3;
-}
-
 class ObstacleShark {
 	constructor(canvasContext, positionX, positionY, width, height, speed) {
 	    this.ctx = canvasContext,
@@ -28,8 +16,15 @@ class ObstacleShark {
 	}
 
 	draw() {
-        this.ctx.drawImage(sharkImg, this.x, this.y, this.width, this.height);
-	}
+		
+if (beerScore <= 40){
+this.ctx.drawImage(sharkImg1, this.x, this.y, this.width, this.height);
+} else if (beerScore <= 70){
+this.ctx.drawImage(sharkImg2, this.x, this.y, this.width, this.height);
+} else if (beerScore <= 100){
+this.ctx.drawImage(sharkImg3, this.x, this.y, this.width, this.height);
+}
+}
 
 	move() {
 		this.x += this.speed;
