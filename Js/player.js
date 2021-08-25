@@ -28,6 +28,8 @@ class Player{
     constructor(){
         this.x = canvas.width/2;
         this.y = canvas.height/2;
+        this.width = 65;
+        this.height = 160;
     }
 
     update(){
@@ -57,7 +59,7 @@ class Player{
     ctx.fill();
     ctx.closePath();
 
-    ctx.drawImage(playerImg, this.x - 170, this.y - 80)
+    ctx.drawImage(playerImg, this.x - this.height, this.y - this.width)
  }
 }
 
