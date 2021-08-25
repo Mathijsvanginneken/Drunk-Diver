@@ -9,8 +9,6 @@
 </head>
 <body>
 
-
-
 <div id="start-page">
     <h1>DRUNK DIVER</h1>
     <div class="page-text">
@@ -20,7 +18,7 @@
               You are in shock!
         </br>
         </br>
-              Move around using your mouse and see if you can get the new highscore by collecting all the trash.</br></br>
+              Move around by clicking your mouse and see if you can get the new highscore by collecting all the trash.</br></br>
               Watch out for the sharks because when you encounter one it's game over!</br>
             </br>
             </br> P.S. there are some special drinks found underwater worth a lot of points but be carefull what they will do to your vision....
@@ -30,33 +28,23 @@
     </div>
 </div>
 
-<div class=" container2 game-container hide" id="game-board" >
-    <canvas class="container" id="canvas" width="1900" height="900">
+<div class=" game-container hide" id="game-board" >
+    <canvas class="container" id="canvas" width="1900" height="920">
     </canvas>
 </div>
 
-<!--
-<div id="win-page" class=" container3">
-    <h1>YOU WON</h1>
-    <div class="page-text">
-        <img id="winner-gif" src="./images/wingif.gif" alt="">
-        <p>Congratulations! You stole the eggs before the T-Rex could catch you!</p>
-
-        <button id="winner-page-button" class="btn btn-lg btn-dark button-display">Play Again</button>
-    </div>
-</div>
-
-
- LOSER PAGE 
-<div id="lose-page" class=" container4">
+<div id="lose-page" class = "hide2">
+    <img src="./Images/nemoachtergrond.png" alt="">
     <h1>WASTED</h1>
     <div class="page-text">
-        <img id="loser-gif" src="./images/loser.gif" alt="">
-        <p>The sharks got you!</p>
-        <p>Do you want to try again?</p>
-        <button id="loser-page-button" class="btn btn-lg btn-dark button-display">Play Again</button>
+        <p>A shark got you!
+        </br>
+        </br>
+              Still thirsty? Just play again!   
+        </p>
+        <button id="lose-page-button">Play again</button>
     </div>
-</div>-->
+</div>
 
     <script src="Js\background.js"></script>
     <script src="Js\obstacle_beer.js"></script>

@@ -159,7 +159,7 @@ function checkSharkCollisions() {
         obstaclesArrayShark[i].y + obstaclesArrayShark[i].height > player.y + player.height
       )
     ) {
-      obstaclesArrayShark.splice(i, 1);
+       playerLost();
     }
   }    
 }
@@ -170,17 +170,22 @@ function drawScore() {
   ctx.fillText('Score: ' + score , 1150, 50);
 }
 
-function startGameFromStartPage() {
+function startGameFromBegin() {
   startPage.classList.add('hide')
   gamePage.style.display = 'flex'
   letsPlay();
 }
 
+function playerLost() {
+  gamePage.style.display = 'none'
+  losePage.classList.remove('hide2')
+}
 
 
-welcomeBtn = document.getElementById('welcome-page-button');
-
+startButton = document.getElementById('welcome-page-button');
+loseButton = document.getElementById('lose-page-button');
 startPage = document.getElementById('start-page');
 gamePage = document.getElementById('game-board');
-
-welcomeBtn.addEventListener('click', startGameFromStartPage);
+losePage = document.getElementById('lose-page');
+startButton.addEventListener('click', startGameFromBegin);
+loseButton.addEventListener('click', startGameFromBegin);
