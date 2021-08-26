@@ -98,9 +98,9 @@ function checkTrashCollisions() {
       &&
       (
         obstaclesArrayTrash[i].y + obstaclesArrayTrash[i].height >= player.y &&
-        obstaclesArrayTrash[i].y > player.y
+        obstaclesArrayTrash[i].y < player.y
         ||
-       obstaclesArrayTrash[i].y >= player.y + player.height &&
+       obstaclesArrayTrash[i].y <= player.y + player.height &&
       obstaclesArrayTrash[i].y + obstaclesArrayTrash[i].height > player.y + player.height
       )
     ) {
@@ -123,9 +123,9 @@ function checkBeerCollisions() {
       &&
       (
         obstaclesArrayBeer[i].y + obstaclesArrayBeer[i].height >= player.y &&
-        obstaclesArrayBeer[i].y > player.y
+        obstaclesArrayBeer[i].y < player.y
         ||
-        obstaclesArrayBeer[i].y >= player.y + player.height &&
+        obstaclesArrayBeer[i].y <= player.y + player.height &&
         obstaclesArrayBeer[i].y + obstaclesArrayBeer[i].height > player.y + player.height
       )
     ) {
@@ -153,9 +153,9 @@ function checkSharkCollisions() {
       &&
       (
         obstaclesArrayShark[i].y + obstaclesArrayShark[i].height >= player.y &&
-        obstaclesArrayShark[i].y > player.y
+        obstaclesArrayShark[i].y < player.y
         ||
-        obstaclesArrayShark[i].y >= player.y + player.height &&
+        obstaclesArrayShark[i].y <= player.y + player.height &&
         obstaclesArrayShark[i].y + obstaclesArrayShark[i].height > player.y + player.height
       )
     ) {
