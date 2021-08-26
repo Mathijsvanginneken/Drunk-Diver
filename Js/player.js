@@ -49,9 +49,9 @@ class Player{
 
     if (beerScore <= 1){
         ctx.drawImage(playerImg1, this.x - this.height, this.y - this.width);
-        } else if (beerScore <= 2){
+        } else if (beerScore <= 3){
         ctx.drawImage(playerImg2, this.x - this.height, this.y - this.width);
-        } else if (beerScore <= 4){
+        } else if (beerScore <= 100){
         ctx.drawImage(playerImg3, this.x - this.height, this.y - this.width);
         }
  }

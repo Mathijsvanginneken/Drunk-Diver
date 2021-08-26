@@ -19,11 +19,11 @@ class ObstacleShark {
 
 	draw() {
 		
-if (beerScore <= 1){
+if (beerScore <= 2){
 this.ctx.drawImage(sharkImg1, this.x-150, this.y, this.width, this.height);
-} else if (beerScore <= 3){
+} else if (beerScore <= 4){
 this.ctx.drawImage(sharkImg2, this.x-150, this.y, this.width, this.height);
-} else if (beerScore <= 5){
+} else if (beerScore <= 100){
 this.ctx.drawImage(sharkImg3, this.x-150, this.y, this.width, this.height);
 }
 }

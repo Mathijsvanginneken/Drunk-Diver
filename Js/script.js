@@ -61,7 +61,7 @@ background.draw();
         Math.ceil(Math.random() * 3)
       );
       obstaclesArrayBeer.push(beer)
-    }, 10000)}
+    }, 5000)}
 
      if(!SharkIntervalId && isStarted){ 
       SharkIntervalId = setInterval( ()=>{
@@ -74,7 +74,7 @@ background.draw();
         Math.ceil(Math.random() * 5)
       );
       obstaclesArrayShark.push(shark)
-    }, 2000)}
+    }, 1500)}
 
     for(const obstacle of obstaclesArrayTrash) {
       obstacle.draw();
@@ -196,7 +196,11 @@ function drawScore() {
 function drawScore2() {
   ctx.font = '50px Arial';
   ctx.fillStyle = 'Black';
-  ctx.fillText('Drunk level: ' + beerScore , 450, 50);
+  if (beerScore <= 6) {
+  ctx.fillText('Drunk level: ' + beerScore , 750, 50);
+  } else {
+    ctx.fillText('Drunk level: Wasted' , 750, 50);
+  }
 }
 
 function startGameFromBegin() {
