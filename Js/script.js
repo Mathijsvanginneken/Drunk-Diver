@@ -159,7 +159,9 @@ function checkSharkCollisions() {
         obstaclesArrayShark[i].y + obstaclesArrayShark[i].height > player.y + player.height
       )
     ) {
-       playerLost();
+      cancelAnimationFrame(frameID) 
+      playerLost(); 
+      
     }
   }    
 }
