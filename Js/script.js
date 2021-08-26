@@ -183,6 +183,13 @@ function playerLost() {
   losePage.classList.remove('hide2')
 }
 
+function startGameFromLosePage() {
+  startPage.classList.add('hide')
+  gamePage.style.display = 'flex'
+  losePage.classList.add('hide2')
+  letsPlay();
+}
+
 
 startButton = document.getElementById('welcome-page-button');
 loseButton = document.getElementById('lose-page-button');
@@ -190,4 +197,4 @@ startPage = document.getElementById('start-page');
 gamePage = document.getElementById('game-board');
 losePage = document.getElementById('lose-page');
 startButton.addEventListener('click', startGameFromBegin);
-loseButton.addEventListener('click', startGameFromBegin);
+loseButton.addEventListener('click', startGameFromLosePage);
