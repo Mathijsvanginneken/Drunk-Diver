@@ -14,9 +14,19 @@ let beerPoints = 0;
 let score = 0;
 let isStarted = true // Change it form the on-click event of the start button
 
-let sound = new Audio("./Sound/cali-1171.mp3");
-sound.volume = 0.3;
-sound.play();
+var myAudio = document.getElementById("myAudio");
+var isPlaying = false;
+
+function togglePlay() {
+  isPlaying ? myAudio.pause() : myAudio.play();
+};
+
+myAudio.onplaying = function() {
+  isPlaying = true;
+};
+myAudio.onpause = function() {
+  isPlaying = false;
+};
 
 function letsPlay(){
 
@@ -206,11 +216,9 @@ function startGameFromLosePage() {
   losePage.classList.add('hide2')
   beerPoints = 0;
   score = 0;
-  player.x = canvas.width*5
-  player.y = canvas.height*5
+
   letsPlay();
 }
-
 
 startButton = document.getElementById('welcome-page-button');
 loseButton = document.getElementById('lose-page-button');
@@ -219,6 +227,7 @@ gamePage = document.getElementById('game-board');
 losePage = document.getElementById('lose-page');
 startButton.addEventListener('click', startGameFromBegin);
 loseButton.addEventListener('click', startGameFromLosePage);
+
 
 function updateHighScore(palyersName, palyersScore){
   /**

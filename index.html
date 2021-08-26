@@ -9,13 +9,9 @@
 </head>
 <body>
 
-<!--<code>audio</code> 
-</audio>
-<audio id="hitFx" src="./Sound/cali-1171.mp3" volume="1" preload>
-</audio>-->
-
 <div id="start-page">
     <h1>DRUNK DIVER</h1>
+    
     <div class="page-text">
         <p>While having a few drinks by the beach you notice all the thrash in the water.
         </br>
@@ -28,13 +24,17 @@
             </br>
             </br> P.S. there are some special drinks found underwater worth a lot of points but be carefull what they will do to your vision....
             </p>   
-
+        <div >
+            <audio id="myAudio" src="../Sound/cali-1171.mp3" preload="auto">
+            </audio>
+            <a onClick="togglePlay()">Audio On / Off</a>
         <button class="btn btn-lg btn-success button-display" id="welcome-page-button">Start</button>
+    </div>
     </div>
 </div>
 
 <div class=" game-container hide" id="game-board" >
-    <canvas class="container" id="canvas" width="1900" height="920">
+    <canvas class="container" id="canvas" width="1900" height="900">
     </canvas>
 </div>
 

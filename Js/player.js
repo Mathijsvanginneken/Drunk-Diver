@@ -8,7 +8,7 @@ playerImg3.src = './Images/player3.png'
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-canvas.height = 920;
+canvas.height = 900;
 canvas.width = 1900;
 
 
