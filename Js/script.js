@@ -20,7 +20,7 @@ var myAudio = document.getElementById("myAudio");
 var isPlaying = false;
 
 function togglePlay() {
-  isPlaying ? myAudio.pause() : myAudio.play();
+  isPlaying ?    myAudio.pause() : myAudio.play();
 };
 
 myAudio.onplaying = function() {
@@ -211,26 +211,27 @@ function startGameFromBegin() {
 function playerLost() {
   gamePage.style.display = 'none'
   losePage.classList.remove('hide2');
-  beerPoints = 0;
+  beerScore = 0;
   score = 0;
   cancelAnimationFrame(frameID)
   cancelAnimationFrame(trashIntervalId)
   cancelAnimationFrame(BeerIntervalId)
   cancelAnimationFrame(SharkIntervalId)
   obstaclesArrayTrash = [];
-obstaclesArrayBeer = [];
-obstaclesArrayShark = [];
+  obstaclesArrayBeer = [];
+  obstaclesArrayShark = [];
 }
 
 function startGameFromLosePage() {
   obstaclesArrayTrash = [];
   obstaclesArrayBeer = [];
   obstaclesArrayShark = [];
+  beerScore = 0;
+  score = 0;
   startPage.classList.add('hide')
   gamePage.style.display = 'flex'
   losePage.classList.add('hide2')
-  beerPoints = 0;
-  score = 0;
+  
 
   letsPlay();
 }
@@ -264,17 +265,3 @@ function drawScore3() {
 }
 
 
-
-/*function updateHighScore(palyersName, palyersScore){
-  /**
-   * const highScores = [{name: palyersName, score: 1214}, {name: palyersName, score:124124}, {name: palyersName, score:1241422}]
-   
-  let highScores = JSON.parse(localStorage.getItem("highscores"))
-  if(palyersScore > highScores[0]) highScores = [{name: palyersName, score: palyersScore}].concat(highScores.slice(0,2))
-  
-  if(palyersScore < highScores[0] && palyersScore > highScores[1] ) highScores = highScores.slice(0, 1).concat([{name: palyersName, score: palyersScore}]).concat(highScores.slice(1,1))
-  if(palyersScore < highScores[0] && palyersScore < highScores[1] && palyersScore > highScores[2] ) highScores = highScores.splice(2, 1, {name: palyersName, score: palyersScore})
-  localStorage.setItem("highscores", JSON.stringify(highScores))
-}
-function getHighScores(){
-  return localStorage.setItem("highscores", JSON.stringify(highScores))*/

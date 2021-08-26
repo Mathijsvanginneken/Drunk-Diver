@@ -26,21 +26,22 @@ body {
     letter-spacing: 2px;
     color: black;
     position: relative;
-    margin-left: 150px;
+    margin-left: 100px;
     
 } 
 h1 {
     font-family: bubble;
     font-size: 100px;
-    margin-bottom: 120px;
-    margin-top: 120px;
+    margin-bottom: 130px;
+    margin-top: 130px;
     text-align: center;
 }
 
 p {
     font-size: 25px;
     width: 900px;
-    text-align: center
+    text-align: center;
+    margin-left: 30px;
 }
 
 #welcome-page-button {
@@ -52,7 +53,7 @@ p {
     border: 3px solid black;
     font-size: 20px;
     margin-left: 400px;
-    
+    background-color: Transparent;
 }
 
 .hide {
@@ -73,6 +74,7 @@ p {
     font-size: 20px;
     margin-left: 420px;
     margin-top: 150px;
+  
 }
 
 img {
@@ -92,7 +94,18 @@ img {
       margin-top: 300px;
       margin-bottom: 200px;
   }
- code {
-    display: none;
- }
 
+a {
+    font-size: 40px;
+    display: flex;
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    font-size: 20px;
+    margin-left: 300px;
+    height: 50px;
+    width: 300px;
+    margin-bottom: 20px;
+}
