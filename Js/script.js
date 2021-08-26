@@ -14,6 +14,10 @@ let beerPoints = 0;
 let score = 0;
 let isStarted = true // Change it form the on-click event of the start button
 
+let sound = new Audio("./Sound/cali-1171.mp3");
+sound.volume = 0.3;
+sound.play();
+
 function letsPlay(){
 
 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -76,7 +80,9 @@ background.draw();
     player.update();
     player.draw();
 
+  
     drawScore();
+    drawScore2();
     checkTrashCollisions();
     checkBeerCollisions();
     checkSharkCollisions();
@@ -130,7 +136,7 @@ function checkBeerCollisions() {
       )
     ) {
       if(beerScore < 100){
-        beerScore += 20;
+        beerScore += 1;
         score += 20;
         console.log(beerScore)
       }
@@ -172,6 +178,12 @@ function drawScore() {
   ctx.fillText('Score: ' + score , 1150, 50);
 }
 
+function drawScore2() {
+  ctx.font = '50px Arial';
+  ctx.fillStyle = 'Black';
+  ctx.fillText('Drunk level: ' + beerScore , 450, 50);
+}
+
 function startGameFromBegin() {
   startPage.classList.add('hide')
   gamePage.style.display = 'flex'
@@ -180,13 +192,22 @@ function startGameFromBegin() {
 
 function playerLost() {
   gamePage.style.display = 'none'
-  losePage.classList.remove('hide2')
+  losePage.classList.remove('hide2');
+  beerPoints = 0;
+  score = 0;
+  cancelAnimationFrame(trashIntervalId)
+  cancelAnimationFrame(BeerIntervalId)
+  cancelAnimationFrame(SharkIntervalId)
 }
 
 function startGameFromLosePage() {
   startPage.classList.add('hide')
   gamePage.style.display = 'flex'
   losePage.classList.add('hide2')
+  beerPoints = 0;
+  score = 0;
+  player.x = canvas.width*5
+  player.y = canvas.height*5
   letsPlay();
 }
 
@@ -198,3 +219,18 @@ gamePage = document.getElementById('game-board');
 losePage = document.getElementById('lose-page');
 startButton.addEventListener('click', startGameFromBegin);
 loseButton.addEventListener('click', startGameFromLosePage);
+
+function updateHighScore(palyersName, palyersScore){
+  /**
+   * const highScores = [{name: palyersName, score: 1214}, {name: palyersName, score:124124}, {name: palyersName, score:1241422}]
+   */
+  let highScores = JSON.parse(localStorage.getItem("highscores"))
+  if(palyersScore > highScores[0]) highScores = [{name: palyersName, score: palyersScore}].concat(highScores.slice(0,2))
+  
+  if(palyersScore < highScores[0] && palyersScore > highScores[1] ) highScores = highScores.slice(0, 1).concat([{name: palyersName, score: palyersScore}]).concat(highScores.slice(1,1))
+  if(palyersScore < highScores[0] && palyersScore < highScores[1] && palyersScore > highScores[2] ) highScores = highScores.splice(2, 1, {name: palyersName, score: palyersScore})
+  localStorage.setItem("highscores", JSON.stringify(highScores))
+}
+function getHighScores(){
+  return localStorage.setItem("highscores", JSON.stringify(highScores)) 
+}

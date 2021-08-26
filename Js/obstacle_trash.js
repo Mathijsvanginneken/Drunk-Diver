@@ -68,11 +68,11 @@ class ObstacleTrash {
 
 	draw() {
 		
-if (beerScore <= 40){
+if (beerScore <= 1){
 this.ctx.drawImage(this.type1, this.x, this.y, this.width, this.height);
-} else if (beerScore <= 70){
+} else if (beerScore <= 3){
 this.ctx.drawImage(this.type2, this.x, this.y, this.width, this.height);
-} else if (beerScore <= 100){
+} else if (beerScore <= 5){
 this.ctx.drawImage(this.type3, this.x, this.y, this.width, this.height);
 }
 }

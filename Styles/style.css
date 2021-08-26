@@ -13,8 +13,8 @@ body {
 }
 #canvas {
     margin-top: 10px;
-    width: 100%;
-    height: 100%;
+    width: 1900px;
+    height: 900px;
 }
 
 @font-face {
@@ -92,3 +92,6 @@ img {
       margin-top: 300px;
       margin-bottom: 200px;
   }
+ code {
+    display: none;
+ }

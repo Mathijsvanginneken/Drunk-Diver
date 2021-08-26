@@ -47,11 +47,11 @@ class Player{
     ctx.fill();
     ctx.closePath();
 
-    if (beerScore <= 40){
+    if (beerScore <= 1){
         ctx.drawImage(playerImg1, this.x - this.height, this.y - this.width);
-        } else if (beerScore <= 70){
+        } else if (beerScore <= 2){
         ctx.drawImage(playerImg2, this.x - this.height, this.y - this.width);
-        } else if (beerScore <= 100){
+        } else if (beerScore <= 4){
         ctx.drawImage(playerImg3, this.x - this.height, this.y - this.width);
         }
  }
