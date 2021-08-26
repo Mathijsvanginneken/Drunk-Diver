@@ -15,7 +15,6 @@ let score = 0;
 let isStarted = true 
 
 
-
 var myAudio = document.getElementById("myAudio");
 var isPlaying = false;
 
@@ -199,7 +198,7 @@ function drawScore2() {
   if (beerScore <= 6) {
   ctx.fillText('Drunk level: ' + beerScore , 750, 50);
   } else {
-    ctx.fillText('Drunk level: Wasted' , 750, 50);
+    ctx.fillText('Drunk level: Wasted' , 550, 50);
   }
 }
 
