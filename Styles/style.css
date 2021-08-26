@@ -19,7 +19,7 @@ body {
 
 @font-face {
     font-family: bubble;
-    src: url('/Font/bubble.ttf');
+    src: url('../Font/bubble.ttf');
 }
 
 #start-page {
