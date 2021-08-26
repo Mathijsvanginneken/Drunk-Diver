@@ -1,6 +1,6 @@
-const obstaclesArrayTrash = [];
-const obstaclesArrayBeer = [];
-const obstaclesArrayShark = [];
+let obstaclesArrayTrash = [];
+let obstaclesArrayBeer = [];
+let obstaclesArrayShark = [];
 
 let trashIntervalId = null
 let BeerIntervalId = null
@@ -12,7 +12,9 @@ const player = new Player();
 let frameID = null
 let beerPoints = 0;
 let score = 0;
-let isStarted = true // Change it form the on-click event of the start button
+let isStarted = true 
+
+
 
 var myAudio = document.getElementById("myAudio");
 var isPlaying = false;
@@ -27,6 +29,8 @@ myAudio.onplaying = function() {
 myAudio.onpause = function() {
   isPlaying = false;
 };
+
+
 
 function letsPlay(){
 
@@ -90,14 +94,15 @@ background.draw();
     player.update();
     player.draw();
 
-  
+   frameID = requestAnimationFrame(letsPlay);
+
+    drawScore3()
     drawScore();
     drawScore2();
+
     checkTrashCollisions();
     checkBeerCollisions();
     checkSharkCollisions();
-
-    frameID = requestAnimationFrame(letsPlay);
 }
 
 
@@ -195,6 +200,9 @@ function drawScore2() {
 }
 
 function startGameFromBegin() {
+  obstaclesArrayTrash = [];
+  obstaclesArrayBeer = [];
+  obstaclesArrayShark = [];
   startPage.classList.add('hide')
   gamePage.style.display = 'flex'
   letsPlay();
@@ -205,12 +213,19 @@ function playerLost() {
   losePage.classList.remove('hide2');
   beerPoints = 0;
   score = 0;
+  cancelAnimationFrame(frameID)
   cancelAnimationFrame(trashIntervalId)
   cancelAnimationFrame(BeerIntervalId)
   cancelAnimationFrame(SharkIntervalId)
+  obstaclesArrayTrash = [];
+obstaclesArrayBeer = [];
+obstaclesArrayShark = [];
 }
 
 function startGameFromLosePage() {
+  obstaclesArrayTrash = [];
+  obstaclesArrayBeer = [];
+  obstaclesArrayShark = [];
   startPage.classList.add('hide')
   gamePage.style.display = 'flex'
   losePage.classList.add('hide2')
@@ -229,10 +244,31 @@ startButton.addEventListener('click', startGameFromBegin);
 loseButton.addEventListener('click', startGameFromLosePage);
 
 
-function updateHighScore(palyersName, palyersScore){
+
+var highscore = localStorage.getItem("highscore");
+
+if(highscore !== null){
+    if (score > highscore) {
+        localStorage.setItem("highscore", score);      
+    }
+}
+else{
+    localStorage.setItem("highscore", score);
+}
+
+
+function drawScore3() {
+  ctx.font = '50px Arial';
+  ctx.fillStyle = 'Black';
+  ctx.fillText('Highscore: ' + highscore , 1450, 50);
+}
+
+
+
+/*function updateHighScore(palyersName, palyersScore){
   /**
    * const highScores = [{name: palyersName, score: 1214}, {name: palyersName, score:124124}, {name: palyersName, score:1241422}]
-   */
+   
   let highScores = JSON.parse(localStorage.getItem("highscores"))
   if(palyersScore > highScores[0]) highScores = [{name: palyersName, score: palyersScore}].concat(highScores.slice(0,2))
   
@@ -241,5 +277,4 @@ function updateHighScore(palyersName, palyersScore){
   localStorage.setItem("highscores", JSON.stringify(highScores))
 }
 function getHighScores(){
-  return localStorage.setItem("highscores", JSON.stringify(highScores)) 
-}
+  return localStorage.setItem("highscores", JSON.stringify(highScores))*/
