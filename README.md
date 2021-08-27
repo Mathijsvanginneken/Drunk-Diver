@@ -26,7 +26,7 @@ As the Drunk Diver you help cleaning the oceans while avoiding the sharks. For c
 - checkTrashCollisions() {}
 - checkBeerCollisions() {}
 - checkSharkCollisions() {}
-- rawScore() {}
+- drawScore() {}
 - drawScore2() {}
 - drawScore3() {}
 - startGameFromBegin() {}
