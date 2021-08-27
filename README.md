@@ -1,15 +1,15 @@
-Drunk Diver
+**Drunk Diver**
 
 Play me
 
 https://mathijsvanginneken.github.io/Drunk-Diver/
 
-Description
+**Description**
 
 As the Drunk Diver you help cleaning the oceans while avoiding the sharks. For collecting the trash and special beers you receive points in order to get a high score. There are special beers floating around you can collect whom make you “drunk” and change the pictures in the game according to your “drunk level”. 
 
 
-MVP 
+**MVP**
 
 - You can click on your mouse anywhere in the map and the player goes to that position
 - The player moves horizontally and vertically
@@ -19,7 +19,7 @@ MVP
 - When the player collides with a shark it's game over
 - The sharks come in the screen from the leftside from different angles
 
-script.js
+**script.js**
 
 - togglePlay() {}
 - letsPlay(){}
@@ -33,15 +33,16 @@ script.js
 - playerLost() {}
 - startGameFromLosePage() {}
 
-player.js
+**player.js**
 
 - Player{}
 
  update(){}
  
  draw(){}
+ 
 
-obstacle_trash.js
+**obstacle_trash.js**
 
 - ObstacleTrash (canvasContext, positionX, positionY, width, height, speed){}
 
@@ -49,15 +50,17 @@ obstacle_trash.js
  
  move() {}
 
-obstacle_shark.js
+
+**obstacle_shark.js**
 
 - ObstacleShark (canvasContext, positionX, positionY, width, height, speed){}
 
  draw() {}
  
  move() {}
+ 
 
-obstacle_beer.js
+**obstacle_beer.js**
 
 - ObstacleBeer (canvasContext, positionX, positionY, width, height, speed){}
 
@@ -65,9 +68,10 @@ obstacle_beer.js
  
  move() {}
 
-mouse_activity.js
 
-background.js
+**mouse_activity.js**
+
+**background.js**
 
 - Background (canvasContext){}
 
